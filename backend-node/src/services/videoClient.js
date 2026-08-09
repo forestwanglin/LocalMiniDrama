@@ -48,7 +48,8 @@ function resolveVideoProtocol(config, modelHint) {
   if (!explicit && protocol === 'openai') {
     if (/api\.x\.ai(\/|$)/.test(baseLower)) protocol = 'xai';
     else if (/grok-imagine|grok.*video/.test(modelLower)) protocol = 'xai';
-    else if (p === 'agnes' || /agnes-video|apihub\.agnes-ai\.com/i.test(baseLower)) protocol = 'agnes';
+#    else if (p === 'agnes' || /agnes-video|apihub\.agnes-ai\.com/i.test(baseLower)) protocol = 'agnes';
+    else if (provider === 'agnes' || /agnes-video|apihub\.agnes-ai\.com/i.test(baseLower)) protocol = 'agnes';
   }
   return protocol;
 }
